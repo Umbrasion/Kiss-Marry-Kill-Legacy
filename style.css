@@ -1,0 +1,111 @@
+body {
+	margin: 0px;
+	font-family: Arial;
+	color: white;
+	background-color: #737373;
+}
+
+.title {
+	text-align: center;
+	width: 100vw;
+	height: 80px;
+	background-color: black;
+	position: absolute;
+}
+
+main {
+	text-align: center;
+	background-color: #737373;
+}
+
+#generateButton {
+	font-size: 15px;
+}
+
+#characterName1, #characterName2, #characterName3 {
+	font-size: 30px;
+}
+
+#series1, #series2, #series3 {
+	font-size: 24px;
+}
+
+#daImage1, #daImage2, #daImage3 {
+	max-width: 550px;
+	max-height: 600px;
+}
+
+.gridTwo {
+	height: fit-content;
+	display: grid;
+	gap: 0%;
+	grid-template-columns: 90% 10%;
+}
+
+.gridThree {
+	height: fit-content;
+	display: grid;
+	gap: 5%;
+	grid-template-columns: 30% 30% 30%;
+}
+
+#character1, #character2, #character3 {
+	font-size: 18px;
+}
+
+#characterImg1, #characterImg2, #characterImg3 {
+	max-height: 150px;
+	max-width: 300px;
+}
+
+#spoilerModeMenu, #chr1Description, #chr2Description, #chr3Description {
+	display: none;
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(50, 50, 50, 0.7);
+	top: 0px;
+}
+
+#spoilerModeMenu:target, #chr1Description:target, #chr2Description:target, #chr3Description:target {
+	display: block;
+}
+
+#characterDescription {
+	width: 310px;
+	padding: 9px;
+	border: 1px solid #D4D4D4;
+	border-radius: 7px;
+	margin: 10px;
+	background-color: #372D46;
+}
+
+.descriptionBox {
+	background-color: #372D46;
+	width: 550px;
+	padding: 10px 20px;
+	border: 2px solid #D4D4D4;
+	border-radius: 8px;
+	margin: 50px auto;
+	text-align: left
+}
+
+h2 {
+	margin-top: 0px;
+	margin-bottom: 8px;
+}
+
+h3 {
+	margin: 0px;
+	border-bottom: 1px solid white;
+}
+
+.spoiler {
+	background-color: white;
+	color: white;
+}
+
+.spoiler:hover {
+	background-color: rgba(0, 0, 0, 0);
+	text-decoration: underline;
+}

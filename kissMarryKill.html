@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The Monkey Brains | Kiss, Marry, Kill</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="randomGenerator.js"></script>
+		<style>
+			.seriesButton {
+				margin-right: 4px;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="title">
+			<span style="font-size: 20px; font-family: monospace">The Monkey Brains Podcast:</span><br>
+			<span style="font-size: 46px; font-family: monospace">KISS, MARRY, KILL</span>
+		</div>
+		<a href="https://www.youtube.com/@TheMonkeyBrainsPodcast"><img src="../monkeybrain.png" style="height: 80px; position: absolute; right: 0"></a>
+		<div style="height: 90px"></div>
+		<div style="text-align: center">
+			<button style="font-size: 15px" onclick="window.location.href='#spoilerModeMenu'">Spoiler Mode menu</button>
+			<button style="font-size: 20px; font-weight: bold; margin: 0px 6px" onclick="generate(false, 4)">Reroll all</button>
+			<button style="margin-right: 56px; font-size: 15px" onclick="clearPicks()">Clear picks</button>
+			<div style="font-style: italic">Click on a character's image to get their bio!</div>
+			<div id="spoilerModeMenu">
+				<div style="background-color: #372D46; width: 350px; padding: 10px 20px; border: 2px solid #D4D4D4; border-radius: 8px; margin: 50px auto; text-align: left">
+					<h1 style="text-align: center; margin-top: 0px; margin-bottom: 10px">Spoiler Mode Settings</h1>
+					<div style="width: fit-content; margin: auto">
+						<!--This sucks mad ass but oh well-->
+						<p style="margin-top: 5px; margin-bottom: 5px">
+							<button id="seriesAceAttorney" class="seriesButton" onclick="selectSpoilerMode('Ace Attorney')">TOGGLE</button>
+							<b>Ace Attorney:</b> Currently <span id="spoilerAA"><span style='color: red'>OFF</span></span>
+						</p>
+						<p style="margin-top: 5px; margin-bottom: 5px">
+							<button id="seriesDanganronpa" class="seriesButton" onclick="selectSpoilerMode('Danganronpa')">TOGGLE</button>
+							<b>Danganronpa:</b> Currently <span id="spoilerDR"><span style='color: red'>OFF</span></span>
+						</p>
+						<p style="margin-top: 5px; margin-bottom: 5px">
+							<button id="seriesEverhood" class="seriesButton" onclick="selectSpoilerMode('Everhood')">TOGGLE</button>
+							<b>Everhood:</b> Currently <span id="spoilerEH"><span style='color: red'>OFF</span></span>
+						</p>
+						<p style="margin-top: 5px; margin-bottom: 5px">
+							<button id="seriesHollowKnight" class="seriesButton" onclick="selectSpoilerMode('Hollow Knight')">TOGGLE</button>
+							<b>Hollow Knight:</b> Currently <span id="spoilerHK"><span style='color: red'>OFF</span></span>
+						</p>
+						<p style="margin-top: 5px; margin-bottom: 5px">
+							<button id="seriesInscryption" class="seriesButton" onclick="selectSpoilerMode('Inscryption')">TOGGLE</button>
+							<b>Inscryption:</b> Currently <span id="spoilerI"><span style='color: red'>OFF</span></span>
+						</p>
+						<p style="margin-top: 5px; margin-bottom: 5px">
+							<button id="seriesOneShot" class="seriesButton" onclick="selectSpoilerMode('OneShot')">TOGGLE</button>
+							<b>OneShot:</b> Currently <span id="spoilerOS"><span style='color: red'>OFF</span></span>
+						</p>
+						<p style="margin-top: 5px; margin-bottom: 5px">
+							<button id="seriesOuterWilds" class="seriesButton" onclick="selectSpoilerMode('Outer Wilds')">TOGGLE</button>
+							<b>Outer Wilds:</b> Currently <span id="spoilerOW"><span style='color: red'>OFF</span></span>
+						</p>
+						<p style="margin-top: 5px; margin-bottom: 5px">
+							<button id="seriesStevenUniverse" class="seriesButton" onclick="selectSpoilerMode('Steven Universe')">TOGGLE</button>
+							<b>Steven Universe:</b> Currently <span id="spoilerSU"><span style='color: red'>OFF</span></span>
+						</p>
+						<p style="margin-top: 5px; margin-bottom: 5px">
+							<button id="seriesUndertale2" class="seriesButton" onclick="selectSpoilerMode('Undertale 2')">TOGGLE</button>
+							<b>Undertale 2:</b> Currently <span id="spoilerU2"><span style='color: red'>OFF</span></span>
+						</p>
+					</div>
+					<div style="text-align: center">
+						<a href="#" style="color: white; font-weight: bold; font-size: 18px">RETURN</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Character description boxes-->
+		<div id="chr1Description">
+			<div class="descriptionBox">
+				<h1 id="_descHead1" style="text-align: center; margin-top: 0px; margin-bottom: 10px; border-bottom: 1px solid white"></h1>
+				<p id="_descBody1"></p>
+				<div style="text-align: center">
+					<a href="#" style="color: white; font-weight: bold; font-size: 18px">RETURN</a>
+				</div>
+			</div>
+		</div>
+		<div id="chr2Description">
+			<div class="descriptionBox">
+				<h1 id="_descHead2" style="text-align: center; margin-top: 0px; margin-bottom: 10px; border-bottom: 1px solid white"></h1>
+				<p id="_descBody2"></p>
+				<div style="text-align: center">
+					<a href="#" style="color: white; font-weight: bold; font-size: 18px">RETURN</a>
+				</div>
+			</div>
+		</div>
+		<div id="chr3Description">
+			<div class="descriptionBox">
+				<h1 id="_descHead3" style="text-align: center; margin-top: 0px; margin-bottom: 10px; border-bottom: 1px solid white"></h1>
+				<p id="_descBody3"></p>
+				<div style="text-align: center">
+					<a href="#" style="color: white; font-weight: bold; font-size: 18px">RETURN</a>
+				</div>
+			</div>
+		</div>
+		<div class="gridThree">
+			<main>
+				<br><button id="generateButton" onclick="generate(false, 1)">Reroll character</button>
+				<!--Debug incrementers-->
+				<!--br>
+				<button id="generateButton" onclick="generate(true, 1, 1)">Increment +1</button>
+				<button id="generateButton" onclick="generate(true, 1, 10)">Increment +10</button>
+				<button id="generateButton" onclick="generate(true, 1, 100)">Increment +100</button><br>
+				<button id="generateButton" onclick="generate(true, 1, -1)">Increment -1</button>
+				<button id="generateButton" onclick="generate(true, 1, -10)">Increment -10</button>
+				<button id="generateButton" onclick="generate(true, 1, -100)">Increment -100</button-->
+				<h1 id="characterName1">Character 1</h1>
+				<p id="series1"></p>
+				<a href="#chr1Description">
+					<img id="daImage1">
+				</a>
+			</main>
+			<main>
+				<br><button id="generateButton" onclick="generate(false, 2)">Reroll character</button>
+				<!--Debug incrementers-->
+				<!--br>
+				<button id="generateButton" onclick="generate(true, 2, 1)">Increment +1</button>
+				<button id="generateButton" onclick="generate(true, 2, 10)">Increment +10</button>
+				<button id="generateButton" onclick="generate(true, 2, 100)">Increment +100</button><br>
+				<button id="generateButton" onclick="generate(true, 2, -1)">Increment -1</button>
+				<button id="generateButton" onclick="generate(true, 2, -10)">Increment -10</button>
+				<button id="generateButton" onclick="generate(true, 2, -100)">Increment -100</button-->
+				<h1 id="characterName2">Character 2</h1>
+				<p id="series2"></p>
+				<a href="#chr2Description">
+					<img id="daImage2">
+				</a>
+			</main>
+			<main>
+				<br><button id="generateButton" onclick="generate(false, 3)">Reroll character</button>
+				<!--Debug incrementers-->
+				<!--br>
+				<button id="generateButton" onclick="generate(true, 3, 1)">Increment +1</button>
+				<button id="generateButton" onclick="generate(true, 3, 10)">Increment +10</button>
+				<button id="generateButton" onclick="generate(true, 3, 100)">Increment +100</button><br>
+				<button id="generateButton" onclick="generate(true, 3, -1)">Increment -1</button>
+				<button id="generateButton" onclick="generate(true, 3, -10)">Increment -10</button>
+				<button id="generateButton" onclick="generate(true, 3, -100)">Increment -100</button-->
+				<h1 id="characterName3">Character 3</h1>
+				<p id="series3"></p>
+				<a href="#chr3Description">
+					<img id="daImage3">
+				</a>
+			</main>
+		</div>
+	</body>
+</html>
