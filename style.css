@@ -1,35 +1,248 @@
 @media (min-width: 1815px) {
+	.title, #mbpImg {
+		height: 80px;
+	}
+	
+	#titlebarTop {
+		font-size: 20px;
+	}
+	
+	#titlebarBottom {
+		font-size: 46px;
+	}
+	
+	.spacerThing {
+		height: 90px;
+	}
+	
 	#daImage1, #daImage2, #daImage3 {
 		max-width: 550px;
 		max-height: 600px;
 	}
+	
+	#descriptionBox {
+		width: 550px;
+	}
+	
+	.grid {
+		gap: 5%;
+		grid-template-columns: 30% 30% 30%;
+	}
+	
+	#generateButton, #smmButton, #clearButton {
+		font-size: 15px;
+	}
+
+	#characterName1, #characterName2, #characterName3 {
+		font-size: 30px;
+	}
+
+	#series1, #series2, #series3 {
+		font-size: 24px;
+	}
+	
+	#rrButton {
+		font-size: 20px;
+	}
+	
+	#spoilerModeMenuBox {
+		width: 350px;
+		margin: 50px calc(100vw / 2 - 197px);
+	}
 }
 
 @media (max-width: 1815px) {
+	.title, #mbpImg {
+		height: 80px;
+	}
+	
+	#titlebarTop {
+		font-size: 20px;
+	}
+	
+	#titlebarBottom {
+		font-size: 46px;
+	}
+	
+	.spacerThing {
+		height: 90px;
+	}
+	
 	#daImage1, #daImage2, #daImage3 {
 		max-width: 450px;
 		max-height: 500px;
 	}
+	
+	#descriptionBox {
+		width: 550px;
+	}
+	
+	.grid {
+		gap: 5%;
+		grid-template-columns: 30% 30% 30%;
+	}
+	
+	#generateButton, #smmButton, #clearButton {
+		font-size: 15px;
+	}
+
+	#characterName1, #characterName2, #characterName3 {
+		font-size: 30px;
+	}
+
+	#series1, #series2, #series3 {
+		font-size: 24px;
+	}
+	
+	#rrButton {
+		font-size: 20px;
+	}
+	
+	#spoilerModeMenuBox {
+		width: 350px;
+		margin: 50px calc(100vw / 2 - 197px);
+	}
 }
 
 @media (max-width: 1480px) {
+	.title, #mbpImg {
+		height: 80px;
+	}
+	
+	#titlebarTop {
+		font-size: 20px;
+	}
+	
+	#titlebarBottom {
+		font-size: 46px;
+	}
+	
+	.spacerThing {
+		height: 90px;
+	}
+	
 	#daImage1, #daImage2, #daImage3 {
 		max-width: 350px;
 		max-height: 400px;
 	}
+	
+	#descriptionBox {
+		width: 550px;
+	}
+	
+	.grid {
+		gap: 5%;
+		grid-template-columns: 30% 30% 30%;
+	}
+	
+	#generateButton, #smmButton, #clearButton {
+		font-size: 15px;
+	}
+
+	#characterName1, #characterName2, #characterName3 {
+		font-size: 30px;
+	}
+
+	#series1, #series2, #series3 {
+		font-size: 24px;
+	}
+	
+	#rrButton {
+		font-size: 20px;
+	}
+	
+	#spoilerModeMenuBox {
+		width: 350px;
+		margin: 50px calc(100% / 2 - 197px);
+	}
 }
 
 @media (max-width: 1200px) {
-	#daImage1, #daImage2, #daImage3 {
-		max-width: 600px;
-		max-height: 600px;
+	.title, #mbpImg {
+		height: 120px;
 	}
+	
+	#titlebarTop {
+		font-size: 32px;
+	}
+	
+	#titlebarBottom {
+		font-size: 66px;
+	}
+	
+	.spacerThing {
+		height: 130px;
+	}
+	
+	#daImage1, #daImage2, #daImage3 {
+		max-width: 700px;
+		max-height: 700px;
+	}
+	
 	main {
 		grid-column: span 3;
 	}
+	
+	#descriptionBox {
+		width: 550px;
+	}
+	
+	.grid {
+		gap: 0%;
+		grid-template-columns: auto;
+	}
+	
+	/* Size changes! Yaaaaaaaaaaaaaaaaaaaay... */
+	
+	#generateButton {
+		font-size: 22px;
+	}
+
+	#characterName1, #characterName2, #characterName3 {
+		font-size: 44px;
+	}
+
+	#series1, #series2, #series3 {
+		font-size: 38px;
+	}
+	
+	#smmButton, #clearButton, #_descBody, .seriesButton, .smmSeries {
+		font-size: 20px;
+	}
+	
+	#rrButton {
+		font-size: 28px;
+	}
+	
+	#bioInfo {
+		font-size: 24px;
+	}
+	
+	#descriptionBox {
+		width: 700px;
+	}
+	
+	#_descHead {
+		font-size: 48px;
+	}
+	
+	#_descNotice {
+		font-size: 24px;
+	}
+	
+	#spoilerModeMenuBox {
+		width: 550px;
+		margin: 50px calc(100vw / 2 - 297px);
+	}
+}
+
+html {
+	min-height: 100%;
+	position: relative;
 }
 
 body {
+	height: 100%;
 	margin: 0px;
 	font-family: Arial;
 	color: white;
@@ -39,7 +252,6 @@ body {
 .title {
 	text-align: center;
 	width: 100%;
-	height: 80px;
 	background-color: black;
 	position: absolute;
 }
@@ -49,27 +261,9 @@ main {
 	background-color: #737373;
 }
 
-#generateButton {
-	font-size: 15px;
-}
-
-#characterName1, #characterName2, #characterName3 {
-	font-size: 30px;
-}
-
-#series1, #series2, #series3 {
-	font-size: 24px;
-}
-
 .grid {
 	height: fit-content;
 	display: grid;
-	gap: 5%;
-	grid-template-columns: 30% 30% 30%;
-}
-
-#character1, #character2, #character3 {
-	font-size: 18px;
 }
 
 #characterImg1, #characterImg2, #characterImg3 {
@@ -80,10 +274,14 @@ main {
 #spoilerModeMenu, #chrDescription {
 	display: none;
 	position: absolute;
-	width: 100vw;
-	height: 100vh;
+	/*width: 100%;
+	height: 100%;*/
 	background-color: rgba(50, 50, 50, 0.7);
 	top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    overflow: hidden;
 }
 
 #spoilerModeMenuBox {
@@ -91,26 +289,14 @@ main {
 	position: absolute;
 	top: 0px;
 	background-color: #372D46;
-	width: 350px;
 	padding: 10px 20px;
 	border: 2px solid #D4D4D4;
 	border-radius: 8px;
-	margin: 50px calc(100vw / 2 - 197px);
 	text-align: left;
-}
-
-#characterDescription {
-	width: 310px;
-	padding: 9px;
-	border: 1px solid #D4D4D4;
-	border-radius: 7px;
-	margin: 10px;
-	background-color: #372D46;
 }
 
 #descriptionBox {
 	background-color: #372D46;
-	width: 550px;
 	padding: 10px 20px;
 	border: 2px solid #D4D4D4;
 	border-radius: 8px;
