@@ -12,6 +12,10 @@
 		</style>
 	</head>
 	<body>
+		<!--
+			Things to add/change:
+			- Add mobile layout compatibility
+		-->
 		<div class="title">
 			<span style="font-size: 20px; font-family: monospace">The Monkey Brains Podcast:</span><br>
 			<span style="font-size: 46px; font-family: monospace">KISS, MARRY, KILL</span>
@@ -19,86 +23,65 @@
 		<a href="https://www.youtube.com/@TheMonkeyBrainsPodcast"><img src="monkeybrain.png" style="height: 80px; position: absolute; right: 0"></a>
 		<div style="height: 90px"></div>
 		<div style="text-align: center">
-			<button style="font-size: 15px" onclick="window.location.href='#spoilerModeMenu'">Spoiler Mode menu</button>
+			<button style="font-size: 15px" onclick="display('spoilerModeMenu')">Spoiler Mode menu</button>
 			<button style="font-size: 20px; font-weight: bold; margin: 0px 6px" onclick="generate(false, 4)">Reroll all</button>
 			<button style="margin-right: 56px; font-size: 15px" onclick="clearPicks()">Clear picks</button>
 			<div style="font-style: italic">Click on a character's image to get their bio!</div>
-			<div id="spoilerModeMenu">
-				<div style="background-color: #372D46; width: 350px; padding: 10px 20px; border: 2px solid #D4D4D4; border-radius: 8px; margin: 50px auto; text-align: left">
-					<h1 style="text-align: center; margin-top: 0px; margin-bottom: 10px">Spoiler Mode Settings</h1>
-					<div style="width: fit-content; margin: auto">
-						<!--This sucks mad ass but oh well-->
-						<p style="margin-top: 5px; margin-bottom: 5px">
-							<button id="seriesAceAttorney" class="seriesButton" onclick="selectSpoilerMode('Ace Attorney')">TOGGLE</button>
-							<b>Ace Attorney:</b> Currently <span id="spoilerAA"><span style='color: red'>OFF</span></span>
-						</p>
-						<p style="margin-top: 5px; margin-bottom: 5px">
-							<button id="seriesDanganronpa" class="seriesButton" onclick="selectSpoilerMode('Danganronpa')">TOGGLE</button>
-							<b>Danganronpa:</b> Currently <span id="spoilerDR"><span style='color: red'>OFF</span></span>
-						</p>
-						<p style="margin-top: 5px; margin-bottom: 5px">
-							<button id="seriesEverhood" class="seriesButton" onclick="selectSpoilerMode('Everhood')">TOGGLE</button>
-							<b>Everhood:</b> Currently <span id="spoilerEH"><span style='color: red'>OFF</span></span>
-						</p>
-						<p style="margin-top: 5px; margin-bottom: 5px">
-							<button id="seriesHollowKnight" class="seriesButton" onclick="selectSpoilerMode('Hollow Knight')">TOGGLE</button>
-							<b>Hollow Knight:</b> Currently <span id="spoilerHK"><span style='color: red'>OFF</span></span>
-						</p>
-						<p style="margin-top: 5px; margin-bottom: 5px">
-							<button id="seriesInscryption" class="seriesButton" onclick="selectSpoilerMode('Inscryption')">TOGGLE</button>
-							<b>Inscryption:</b> Currently <span id="spoilerI"><span style='color: red'>OFF</span></span>
-						</p>
-						<p style="margin-top: 5px; margin-bottom: 5px">
-							<button id="seriesOneShot" class="seriesButton" onclick="selectSpoilerMode('OneShot')">TOGGLE</button>
-							<b>OneShot:</b> Currently <span id="spoilerOS"><span style='color: red'>OFF</span></span>
-						</p>
-						<p style="margin-top: 5px; margin-bottom: 5px">
-							<button id="seriesOuterWilds" class="seriesButton" onclick="selectSpoilerMode('Outer Wilds')">TOGGLE</button>
-							<b>Outer Wilds:</b> Currently <span id="spoilerOW"><span style='color: red'>OFF</span></span>
-						</p>
-						<p style="margin-top: 5px; margin-bottom: 5px">
-							<button id="seriesStevenUniverse" class="seriesButton" onclick="selectSpoilerMode('Steven Universe')">TOGGLE</button>
-							<b>Steven Universe:</b> Currently <span id="spoilerSU"><span style='color: red'>OFF</span></span>
-						</p>
-						<p style="margin-top: 5px; margin-bottom: 5px">
-							<button id="seriesUndertale2" class="seriesButton" onclick="selectSpoilerMode('Undertale 2')">TOGGLE</button>
-							<b>Undertale 2:</b> Currently <span id="spoilerU2"><span style='color: red'>OFF</span></span>
-						</p>
-					</div>
-					<div style="text-align: center">
-						<a href="#" style="color: white; font-weight: bold; font-size: 18px">RETURN</a>
-					</div>
+			<div id="spoilerModeMenu" onclick="display('none')"></div>
+			<div id="spoilerModeMenuBox" onclick="">
+				<h1 style="text-align: center; margin-top: 0px; margin-bottom: 10px">Spoiler Mode Settings</h1>
+				<div style="width: fit-content; margin: auto">
+					<!--This sucks mad ass but oh well-->
+					<p style="margin-top: 5px; margin-bottom: 5px">
+						<button id="seriesAceAttorney" class="seriesButton" onclick="selectSpoilerMode('Ace Attorney')">TOGGLE</button>
+						<b>Ace Attorney:</b> Currently <span id="spoilerAA"><span style='color: red'>OFF</span></span>
+					</p>
+					<p style="margin-top: 5px; margin-bottom: 5px">
+						<button id="seriesDanganronpa" class="seriesButton" onclick="selectSpoilerMode('Danganronpa')">TOGGLE</button>
+						<b>Danganronpa:</b> Currently <span id="spoilerDR"><span style='color: red'>OFF</span></span>
+					</p>
+					<p style="margin-top: 5px; margin-bottom: 5px">
+						<button id="seriesEverhood" class="seriesButton" onclick="selectSpoilerMode('Everhood')">TOGGLE</button>
+						<b>Everhood:</b> Currently <span id="spoilerEH"><span style='color: red'>OFF</span></span>
+					</p>
+					<p style="margin-top: 5px; margin-bottom: 5px">
+						<button id="seriesHollowKnight" class="seriesButton" onclick="selectSpoilerMode('Hollow Knight')">TOGGLE</button>
+						<b>Hollow Knight:</b> Currently <span id="spoilerHK"><span style='color: red'>OFF</span></span>
+					</p>
+					<p style="margin-top: 5px; margin-bottom: 5px">
+						<button id="seriesInscryption" class="seriesButton" onclick="selectSpoilerMode('Inscryption')">TOGGLE</button>
+						<b>Inscryption:</b> Currently <span id="spoilerI"><span style='color: red'>OFF</span></span>
+					</p>
+					<p style="margin-top: 5px; margin-bottom: 5px">
+						<button id="seriesOneShot" class="seriesButton" onclick="selectSpoilerMode('OneShot')">TOGGLE</button>
+						<b>OneShot:</b> Currently <span id="spoilerOS"><span style='color: red'>OFF</span></span>
+					</p>
+					<p style="margin-top: 5px; margin-bottom: 5px">
+						<button id="seriesOuterWilds" class="seriesButton" onclick="selectSpoilerMode('Outer Wilds')">TOGGLE</button>
+						<b>Outer Wilds:</b> Currently <span id="spoilerOW"><span style='color: red'>OFF</span></span>
+					</p>
+					<p style="margin-top: 5px; margin-bottom: 5px">
+						<button id="seriesStevenUniverse" class="seriesButton" onclick="selectSpoilerMode('Steven Universe')">TOGGLE</button>
+						<b>Steven Universe:</b> Currently <span id="spoilerSU"><span style='color: red'>OFF</span></span>
+					</p>
+					<p style="margin-top: 5px; margin-bottom: 5px">
+						<button id="seriesUndertale2" class="seriesButton" onclick="selectSpoilerMode('Undertale 2')">TOGGLE</button>
+						<b>Undertale 2:</b> Currently <span id="spoilerU2"><span style='color: red'>OFF</span></span>
+					</p>
+				</div>
+				<div style="text-align: center">
+					<p style="color: white; font-size: 16px">Click anywhere to return...</p>
 				</div>
 			</div>
 		</div>
 		<!--Character description boxes-->
-		<div id="chr1Description">
-			<div class="descriptionBox">
-				<h1 id="_descHead1" style="text-align: center; margin-top: 0px; margin-bottom: 10px; border-bottom: 1px solid white"></h1>
+		<div id="chrDescription" onclick="display('none')">
+			<div id="descriptionBox" onclick="">
+				<h1 id="_descHead" style="text-align: center; margin-top: 0px; margin-bottom: 10px; border-bottom: 1px solid white"></h1>
 				<h2 style="font-weight: bold; color: red; font-size: 18px; text-align: center">NOTICE: Descriptions are far from finished. Most characters do not have one.</h2>
-				<p id="_descBody1"></p>
+				<p id="_descBody"></p>
 				<div style="text-align: center">
-					<a href="#" style="color: white; font-weight: bold; font-size: 18px">RETURN</a>
-				</div>
-			</div>
-		</div>
-		<div id="chr2Description">
-			<div class="descriptionBox">
-				<h1 id="_descHead2" style="text-align: center; margin-top: 0px; margin-bottom: 10px; border-bottom: 1px solid white"></h1>
-				<h2 style="font-weight: bold; color: red; font-size: 18px; text-align: center">NOTICE: Descriptions are far from finished. Most characters do not have one.</h2>
-				<p id="_descBody2"></p>
-				<div style="text-align: center">
-					<a href="#" style="color: white; font-weight: bold; font-size: 18px">RETURN</a>
-				</div>
-			</div>
-		</div>
-		<div id="chr3Description">
-			<div class="descriptionBox">
-				<h1 id="_descHead3" style="text-align: center; margin-top: 0px; margin-bottom: 10px; border-bottom: 1px solid white"></h1>
-				<h2 style="font-weight: bold; color: red; font-size: 18px; text-align: center">NOTICE: Descriptions are far from finished. Most characters do not have one.</h2>
-				<p id="_descBody3"></p>
-				<div style="text-align: center">
-					<a href="#" style="color: white; font-weight: bold; font-size: 18px">RETURN</a>
+					<p style="color: white; font-size: 16px">Click anywhere to return...</p>
 				</div>
 			</div>
 		</div>
@@ -115,7 +98,7 @@
 				<button id="generateButton" onclick="generate(true, 1, -100)">Increment -100</button-->
 				<h1 id="characterName1">Character 1</h1>
 				<p id="series1"></p>
-				<a href="#chr1Description">
+				<a onclick="display('chrDescription', 1)">
 					<img id="daImage1">
 				</a>
 			</main>
@@ -131,7 +114,7 @@
 				<button id="generateButton" onclick="generate(true, 2, -100)">Increment -100</button-->
 				<h1 id="characterName2">Character 2</h1>
 				<p id="series2"></p>
-				<a href="#chr2Description">
+				<a onclick="display('chrDescription', 2)">
 					<img id="daImage2">
 				</a>
 			</main>
@@ -147,7 +130,7 @@
 				<button id="generateButton" onclick="generate(true, 3, -100)">Increment -100</button-->
 				<h1 id="characterName3">Character 3</h1>
 				<p id="series3"></p>
-				<a href="#chr3Description">
+				<a onclick="display('chrDescription', 3)">
 					<img id="daImage3">
 				</a>
 			</main>

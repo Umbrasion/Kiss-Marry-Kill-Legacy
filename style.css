@@ -58,7 +58,7 @@ main {
 	max-width: 300px;
 }
 
-#spoilerModeMenu, #chr1Description, #chr2Description, #chr3Description {
+#spoilerModeMenu, #chrDescription {
 	display: none;
 	position: absolute;
 	width: 100vw;
@@ -67,8 +67,17 @@ main {
 	top: 0px;
 }
 
-#spoilerModeMenu:target, #chr1Description:target, #chr2Description:target, #chr3Description:target {
-	display: block;
+#spoilerModeMenuBox {
+	display: none;
+	position: absolute;
+	top: 0px;
+	background-color: #372D46;
+	width: 350px;
+	padding: 10px 20px;
+	border: 2px solid #D4D4D4;
+	border-radius: 8px;
+	margin: 50px calc(100vw / 2 - 197px);
+	text-align: left;
 }
 
 #characterDescription {
@@ -80,14 +89,14 @@ main {
 	background-color: #372D46;
 }
 
-.descriptionBox {
+#descriptionBox {
 	background-color: #372D46;
 	width: 550px;
 	padding: 10px 20px;
 	border: 2px solid #D4D4D4;
 	border-radius: 8px;
 	margin: 50px auto;
-	text-align: left
+	text-align: left;
 }
 
 h2 {

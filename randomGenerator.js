@@ -7177,6 +7177,7 @@ var chrNameDescriptions = [
 var spoilerMode = false;
 var pickNum = 0;
 var randNum = -1;
+var descriptionList = [];
 
 function generate(increment, value, incrementValue) {
 	// (10 - 1) + 1 is the max minus the min (plus one) plus the min
@@ -7266,51 +7267,57 @@ function generate(increment, value, incrementValue) {
 	var image3 = document.getElementById("daImage3");
 	switch (value) {
 		case 1:
+			descriptionList[value - 1] = randNum;
 			document.getElementById("characterName1").innerHTML = chrNames[randNum];
 			image1.src = "characters/" + chrImages[randNum];
-			document.getElementById("_descHead1").innerHTML = chrNames[randNum];
-			document.getElementById("_descBody1").innerHTML = chrNameDescriptions[randNum];
+			//document.getElementById("_descHead1").innerHTML = chrNames[randNum];
+			//document.getElementById("_descBody1").innerHTML = chrNameDescriptions[randNum];
 			assignSeries(value);
 			spoilerCheck(value);
 			break;
 		case 2:
+			descriptionList[value - 1] = randNum;
 			document.getElementById("characterName2").innerHTML = chrNames[randNum];
 			image2.src = "characters/" + chrImages[randNum];
-			document.getElementById("_descHead2").innerHTML = chrNames[randNum];
-			document.getElementById("_descBody2").innerHTML = chrNameDescriptions[randNum];
+			//document.getElementById("_descHead2").innerHTML = chrNames[randNum];
+			//document.getElementById("_descBody2").innerHTML = chrNameDescriptions[randNum];
 			assignSeries(value);
 			spoilerCheck(value);
 			break;
 		case 3:
+			descriptionList[value - 1] = randNum;
 			document.getElementById("characterName3").innerHTML = chrNames[randNum];
 			image3.src = "characters/" + chrImages[randNum];
-			document.getElementById("_descHead3").innerHTML = chrNames[randNum];
-			document.getElementById("_descBody3").innerHTML = chrNameDescriptions[randNum];
+			//document.getElementById("_descHead3").innerHTML = chrNames[randNum];
+			//document.getElementById("_descBody3").innerHTML = chrNameDescriptions[randNum];
 			assignSeries(value);
 			spoilerCheck(value);
 			break;
 		case 4:
 			var tempValue = 1;
+			descriptionList[tempValue - 1] = randNum;
 			document.getElementById("characterName1").innerHTML = chrNames[randNum];
 			image1.src = "characters/" + chrImages[randNum];
-			document.getElementById("_descHead1").innerHTML = chrNames[randNum];
-			document.getElementById("_descBody1").innerHTML = chrNameDescriptions[randNum];
+			//document.getElementById("_descHead1").innerHTML = chrNames[randNum];
+			//document.getElementById("_descBody1").innerHTML = chrNameDescriptions[randNum];
 			assignSeries(tempValue);
 			spoilerCheck(tempValue);
 			tempValue = 2;
 			rerollByName();
+			descriptionList[tempValue - 1] = randNum;
 			document.getElementById("characterName2").innerHTML = chrNames[randNum];
 			image2.src = "characters/" + chrImages[randNum];
-			document.getElementById("_descHead2").innerHTML = chrNames[randNum];
-			document.getElementById("_descBody2").innerHTML = chrNameDescriptions[randNum];
+			//document.getElementById("_descHead2").innerHTML = chrNames[randNum];
+			//document.getElementById("_descBody2").innerHTML = chrNameDescriptions[randNum];
 			assignSeries(tempValue);
 			spoilerCheck(tempValue);
 			tempValue = 3;
 			rerollByName();
+			descriptionList[tempValue - 1] = randNum;
 			document.getElementById("characterName3").innerHTML = chrNames[randNum];
 			image3.src = "characters/" + chrImages[randNum];
-			document.getElementById("_descHead3").innerHTML = chrNames[randNum];
-			document.getElementById("_descBody3").innerHTML = chrNameDescriptions[randNum];
+			//document.getElementById("_descHead3").innerHTML = chrNames[randNum];
+			//document.getElementById("_descBody3").innerHTML = chrNameDescriptions[randNum];
 			assignSeries(tempValue);
 			spoilerCheck(tempValue);
 			break;
@@ -7891,4 +7898,24 @@ function clearPicks() {
 
 function smashOrPass() {
 	
+}
+
+function display(displayWhat, descNum) {
+	switch (displayWhat) {
+		case "chrDescription":
+			console.log(descriptionList);
+			document.getElementById("chrDescription").style.display = "block";
+			document.getElementById("_descHead").innerHTML = chrNames[descriptionList[descNum - 1]];
+			document.getElementById("_descBody").innerHTML = chrNameDescriptions[descriptionList[descNum - 1]];
+			break;
+		case "spoilerModeMenu":
+			document.getElementById("spoilerModeMenu").style.display = "block";
+			document.getElementById("spoilerModeMenuBox").style.display = "block";
+			break;
+		case "none":
+			document.getElementById("chrDescription").style.display = "none";
+			document.getElementById("spoilerModeMenu").style.display = "none";
+			document.getElementById("spoilerModeMenuBox").style.display = "none";
+			break;
+	}
 }
