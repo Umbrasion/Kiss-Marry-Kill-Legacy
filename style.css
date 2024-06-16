@@ -1,3 +1,34 @@
+@media (min-width: 1815px) {
+	#daImage1, #daImage2, #daImage3 {
+		max-width: 550px;
+		max-height: 600px;
+	}
+}
+
+@media (max-width: 1815px) {
+	#daImage1, #daImage2, #daImage3 {
+		max-width: 450px;
+		max-height: 500px;
+	}
+}
+
+@media (max-width: 1480px) {
+	#daImage1, #daImage2, #daImage3 {
+		max-width: 350px;
+		max-height: 400px;
+	}
+}
+
+@media (max-width: 1200px) {
+	#daImage1, #daImage2, #daImage3 {
+		max-width: 600px;
+		max-height: 600px;
+	}
+	main {
+		grid-column: span 3;
+	}
+}
+
 body {
 	margin: 0px;
 	font-family: Arial;
@@ -7,7 +38,7 @@ body {
 
 .title {
 	text-align: center;
-	width: 100vw;
+	width: 100%;
 	height: 80px;
 	background-color: black;
 	position: absolute;
@@ -30,19 +61,7 @@ main {
 	font-size: 24px;
 }
 
-#daImage1, #daImage2, #daImage3 {
-	max-width: 550px;
-	max-height: 600px;
-}
-
-.gridTwo {
-	height: fit-content;
-	display: grid;
-	gap: 0%;
-	grid-template-columns: 90% 10%;
-}
-
-.gridThree {
+.grid {
 	height: fit-content;
 	display: grid;
 	gap: 5%;

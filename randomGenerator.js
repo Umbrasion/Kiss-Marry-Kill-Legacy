@@ -7178,6 +7178,7 @@ var spoilerMode = false;
 var pickNum = 0;
 var randNum = -1;
 var descriptionList = [];
+console.log("Current total characters: " + chrNames.length);
 
 function generate(increment, value, incrementValue) {
 	// (10 - 1) + 1 is the max minus the min (plus one) plus the min
