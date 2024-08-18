@@ -278,6 +278,7 @@ var chrNames = [
 	"Makoto Nanaya",
 	"Nine the Phantom",
 	"Noel Vermillion",
+	"Rachel Alucard",
 	"Ragna the Bloodedge",
 	"Relius Clover",
 	"Susano'o",
@@ -353,6 +354,10 @@ var chrNames = [
 	// Clash Royale
 	"King", // heheheha
 	"S.P.A.R.K.Y.",
+	// The Coffin of Andy and Leyley
+	"Andrew Graves",
+	"Ashley Graves",
+	"Renee Graves",
 	// Crash Bandicoot
 	"Crash Bandicoot",
 	"Dr. Nitrus Brio",
@@ -2130,10 +2135,11 @@ var chrNames = [
 	"Witch Doctor",
 	"Wizard",
 	"Zoologist",
-	// Terraria Calamity Mod
+	// Terraria Mods
 	"Anahita",
 	"Aquatic Scourge",
 	"Archmage",
+	"Asphodene",
 	"Astrum Aureus",
 	"Astrum Deus",
 	"Bandit",
@@ -2146,6 +2152,7 @@ var chrNames = [
 	"Draedon",
 	"Dragonfolly",
 	"Drunk Princess",
+	"Eridani",
 	"The Hive Mind",
 	"The Leviathan",
 	"The Old Duke",
@@ -2300,6 +2307,8 @@ var chrNames = [
 	"Len",
 	"Michael Roa Valdamjong",
 	"Miyako Arima",
+	"Neco-Arc",
+	"Neco-Arc Chaos",
 	"Night of Wallachia",
 	"Noel",
 	"Nrvnqsr Chaos",
@@ -2719,6 +2728,7 @@ var chrImages = [
 	"BlazBlue/MakotoNanaya.png",
 	"BlazBlue/NineThePhantom.png",
 	"BlazBlue/NoelVermillion.png",
+	"BlazBlue/RachelAlucard.png",
 	"BlazBlue/RagnaTheBloodedge.png",
 	"BlazBlue/ReliusClover.png",
 	"BlazBlue/Susanoo.png",
@@ -2794,6 +2804,10 @@ var chrImages = [
 	// Clash Royale
 	"ClashRoyale/King.webp",
 	"ClashRoyale/SPARKY.webp",
+	// The Coffin of Andy and Leyley
+	"TheCoffinOfAndyAndLeyley/AndrewGraves.png",
+	"TheCoffinOfAndyAndLeyley/AshleyGraves.png",
+	"TheCoffinOfAndyAndLeyley/ReneeGraves.png",
 	// Crash Bandicoot
 	"CrashBandicoot/CrashBandicoot.webp",
 	"CrashBandicoot/DrNitrusBrio.webp",
@@ -4571,37 +4585,39 @@ var chrImages = [
 	"Terraria/WitchDoctor.webp",
 	"Terraria/Wizard.webp",
 	"Terraria/Zoologist.webp",
-	// Terraria Calamity Mod
-	"TerrariaCalamityMod/Anahita.webp",
-	"TerrariaCalamityMod/AquaticScourge.webp",
-	"TerrariaCalamityMod/Archmage.webp",
-	"TerrariaCalamityMod/AstrumAureus.webp",
-	"TerrariaCalamityMod/AstrumDeus.webp",
-	"TerrariaCalamityMod/BanditCalamity.webp",
-	"TerrariaCalamityMod/BrimstoneElemental.png",
-	"TerrariaCalamityMod/CeaselessVoid.webp",
-	"TerrariaCalamityMod/Crabulon.webp",
-	"TerrariaCalamityMod/Cryogen.webp",
-	"TerrariaCalamityMod/DesertScourge.webp",
-	"TerrariaCalamityMod/TheDevourerOfGods.webp",
-	"TerrariaCalamityMod/Draedon.png",
-	"TerrariaCalamityMod/Dragonfolly.webp",
-	"TerrariaCalamityMod/DrunkPrincess.webp",
-	"TerrariaCalamityMod/TheHiveMind.webp",
-	"TerrariaCalamityMod/TheLeviathan.png",
-	"TerrariaCalamityMod/TheOldDuke.png",
-	"TerrariaCalamityMod/ThePerforatorHive.webp",
-	"TerrariaCalamityMod/ThePlaguebringerGoliath.webp",
-	"TerrariaCalamityMod/Polterghast.png",
-	"TerrariaCalamityMod/Providence.webp",
-	"TerrariaCalamityMod/Ravager.webp",
-	"TerrariaCalamityMod/SeaKing.webp",
-	"TerrariaCalamityMod/Signus.webp",
-	"TerrariaCalamityMod/TheSlimeGod.webp",
-	"TerrariaCalamityMod/StormWeaver.webp",
-	"TerrariaCalamityMod/SupremeWitchCalamitas.webp",
-	"TerrariaCalamityMod/Yharim.jpg",
-	"TerrariaCalamityMod/Yharon.webp",
+	// Terraria Mods
+	"TerrariaMods/Anahita.webp",
+	"TerrariaMods/AquaticScourge.webp",
+	"TerrariaMods/Archmage.webp",
+	"TerrariaMods/Asphodene.png",
+	"TerrariaMods/AstrumAureus.webp",
+	"TerrariaMods/AstrumDeus.webp",
+	"TerrariaMods/BanditCalamity.webp",
+	"TerrariaMods/BrimstoneElemental.png",
+	"TerrariaMods/CeaselessVoid.webp",
+	"TerrariaMods/Crabulon.webp",
+	"TerrariaMods/Cryogen.webp",
+	"TerrariaMods/DesertScourge.webp",
+	"TerrariaMods/TheDevourerOfGods.webp",
+	"TerrariaMods/Draedon.png",
+	"TerrariaMods/Dragonfolly.webp",
+	"TerrariaMods/DrunkPrincess.webp",
+	"TerrariaMods/Eridani.png",
+	"TerrariaMods/TheHiveMind.webp",
+	"TerrariaMods/TheLeviathan.png",
+	"TerrariaMods/TheOldDuke.png",
+	"TerrariaMods/ThePerforatorHive.webp",
+	"TerrariaMods/ThePlaguebringerGoliath.webp",
+	"TerrariaMods/Polterghast.png",
+	"TerrariaMods/Providence.webp",
+	"TerrariaMods/Ravager.webp",
+	"TerrariaMods/SeaKing.webp",
+	"TerrariaMods/Signus.webp",
+	"TerrariaMods/TheSlimeGod.webp",
+	"TerrariaMods/StormWeaver.webp",
+	"TerrariaMods/SupremeWitchCalamitas.webp",
+	"TerrariaMods/Yharim.jpg",
+	"TerrariaMods/Yharon.webp",
 	// Titanfall
 	"Titanfall/BT7274.webp",
 	"Titanfall/JackCooper.webp",
@@ -4741,6 +4757,8 @@ var chrImages = [
 	"TYPEMOON/Len.webp",
 	"TYPEMOON/MichaelRoaValdamjong.png",
 	"TYPEMOON/MiyakoArima.png",
+	"TYPEMOON/NecoArc.png",
+	"TYPEMOON/NecoArcChaos.webp",
 	"TYPEMOON/NightOfWallachia.webp",
 	"TYPEMOON/Noel.png",
 	"TYPEMOON/NrvnqsrChaos.webp",
@@ -5159,6 +5177,7 @@ var chrNameDescriptions = [
 	"<b>AGE: Unknown</b><br>Makoto Nanaya",
 	"<b>AGE: Unknown</b><br>Nine the Phantom",
 	"<b>AGE: 5 (artificial human)</b><br>Noel Vermillion",
+	"<b>AGE: 100+</b><br>Rachel Alucard",
 	"<b>AGE: 18-25</b><br>Ragna the Bloodedge",
 	"<b>AGE: Unknown</b><br>Relius Clover",
 	"<b>AGE: Unknown</b><br>Susano'o",
@@ -5234,6 +5253,10 @@ var chrNameDescriptions = [
 	// Clash Royale
 	"<b>AGE: Unknown</b><br>King",
 	"<b>AGE: Unknown</b><br>S.P.A.R.K.Y.",
+	// The Coffin of Andy and Leyley
+	"<b>AGE: 22</b><br>Andrew Graves",
+	"<b>AGE: 20</b><br>Ashley Graves",
+	"<b>AGE: ~37</b><br>Renee Graves",
 	// Crash Bandicoot
 	"<b>AGE: Unknown</b><br>Crash Bandicoot",
 	"<b>AGE: Unknown</b><br>Dr. Nitrus Brio",
@@ -7011,10 +7034,11 @@ var chrNameDescriptions = [
 	"<b>AGE: Unknown</b><br>Witch Doctor",
 	"<b>AGE: Unknown</b><br>Wizard",
 	"<b>AGE: Unknown</b><br>Zoologist",
-	// Terraria Calamity Mod
+	// Terraria Mods
 	"<b>AGE: Unknown</b><br>Anahita",
 	"<b>AGE: Unknown</b><br>Aquatic Scourge",
 	"<b>AGE: Unknown</b><br>Archmage",
+	"<b>AGE: Unknown</b><br>Asphodene",
 	"<b>AGE: Unknown</b><br>Astrum Aureus",
 	"<b>AGE: Unknown</b><br>Astrum Deus",
 	"<b>AGE: Unknown</b><br>Bandit",
@@ -7024,9 +7048,10 @@ var chrNameDescriptions = [
 	"<b>AGE: Unknown</b><br>Cryogen",
 	"<b>AGE: Unknown</b><br>Desert Scourge",
 	"<b>AGE: Unknown</b><br>The Devourer of Gods",
-	"<b>AGE: Unknown</b><br>Draedon",
+	"<b>AGE: 600</b><br>Draedon",
 	"<b>AGE: Unknown</b><br>Dragonfolly",
 	"<b>AGE: Unknown</b><br>Drunk Princess",
+	"<b>AGE: Unknown</b><br>Eridani",
 	"<b>AGE: Unknown</b><br>The Hive Mind",
 	"<b>AGE: Unknown</b><br>The Leviathan",
 	"<b>AGE: Unknown</b><br>The Old Duke",
@@ -7039,7 +7064,7 @@ var chrNameDescriptions = [
 	"<b>AGE: Unknown</b><br>Signus",
 	"<b>AGE: Unknown</b><br>The Slime God",
 	"<b>AGE: Unknown</b><br>Storm Weaver",
-	"<b>AGE: Unknown</b><br>Supreme Witch, Calamitas",
+	"<b>AGE: 20-30</b><br>Supreme Witch, Calamitas",
 	"<b>AGE: Unknown</b><br>Yharim",
 	"<b>AGE: Unknown</b><br>Yharon",
 	// Titanfall
@@ -7181,6 +7206,8 @@ var chrNameDescriptions = [
 	"<b>AGE: Unknown</b><br>Len",
 	"<b>AGE: 800+</b><br>Michael Roa Valdamjong",
 	"<b>AGE: Unknown</b><br>Miyako Arima",
+	"<b>AGE: Unknown</b><br>Neco-Arc",
+	"<b>AGE: Unknown</b><br>Neco-Arc Chaos",
 	"<b>AGE: 500</b><br>Night of Wallachia",
 	"<b>AGE: 27</b><br>Noel",
 	"<b>AGE: 1000</b><br>Nrvnqsr Chaos",
@@ -7670,6 +7697,8 @@ function assignSeries(value) {
 		document.getElementById("series" + value).innerHTML = "Clash of Clans";
 	} else if (chrImages[randNum].includes("ClashRoyale/")) {
 		document.getElementById("series" + value).innerHTML = "Clash Royale";
+	} else if (chrImages[randNum].includes("TheCoffinOfAndyAndLeyley/")) {
+		document.getElementById("series" + value).innerHTML = "The Coffin of Andy and Leyley";
 	} else if (chrImages[randNum].includes("CrashBandicoot/")) {
 		document.getElementById("series" + value).innerHTML = "Crash Bandicoot";
 	} else if (chrImages[randNum].includes("Cuphead/")) {
@@ -7912,8 +7941,8 @@ function assignSeries(value) {
 		document.getElementById("series" + value).innerHTML = "Tekken";
 	} else if (chrImages[randNum].includes("Terraria/")) {
 		document.getElementById("series" + value).innerHTML = "Terraria";
-	} else if (chrImages[randNum].includes("TerrariaCalamityMod/")) {
-		document.getElementById("series" + value).innerHTML = "Terraria Calamity Mod";
+	} else if (chrImages[randNum].includes("TerrariaMods/")) {
+		document.getElementById("series" + value).innerHTML = "Terraria Mods";
 	} else if (chrImages[randNum].includes("Titanfall/")) {
 		document.getElementById("series" + value).innerHTML = "Titanfall";
 	} else if (chrImages[randNum].includes("TouhouProject/")) {
