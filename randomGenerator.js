@@ -944,6 +944,7 @@ var chrNames = [
 	"Uriel",
 	"Vane",
 	"Vaseraga",
+	"Versusia",
 	"Vira",
 	"Yodarha",
 	"Yuel",
@@ -1733,6 +1734,9 @@ var chrNames = [
 	"SCP-173",
 	"SCP-682",
 	"SCP-1471-A",
+	// Second Stellar
+	"Asphodene",
+	"Eridani",
 	// Shantae
 	"Bolo",
 	"Mimic",
@@ -2139,7 +2143,6 @@ var chrNames = [
 	"Anahita",
 	"Aquatic Scourge",
 	"Archmage",
-	"Asphodene",
 	"Astrum Aureus",
 	"Astrum Deus",
 	"Bandit",
@@ -2152,7 +2155,6 @@ var chrNames = [
 	"Draedon",
 	"Dragonfolly",
 	"Drunk Princess",
-	"Eridani",
 	"The Hive Mind",
 	"The Leviathan",
 	"The Old Duke",
@@ -3394,6 +3396,7 @@ var chrImages = [
 	"GranblueFantasy/Uriel.png",
 	"GranblueFantasy/Vane.png",
 	"GranblueFantasy/Vaseraga.png",
+	"GranblueFantasy/Versusia.png",
 	"GranblueFantasy/Vira.png",
 	"GranblueFantasy/Yodarha.png",
 	"GranblueFantasy/Yuel.png",
@@ -4183,6 +4186,9 @@ var chrImages = [
 	"SCP/SCP173.webp",
 	"SCP/SCP682.jpg",
 	"SCP/SCP1471A.jpg",
+	// Second Stellar
+	"SecondStellar/Asphodene.png",
+	"SecondStellar/Eridani.png",
 	// Shantae
 	"Shantae/Bolo.webp",
 	"Shantae/Mimic.webp",
@@ -4589,7 +4595,6 @@ var chrImages = [
 	"TerrariaMods/Anahita.webp",
 	"TerrariaMods/AquaticScourge.webp",
 	"TerrariaMods/Archmage.webp",
-	"TerrariaMods/Asphodene.png",
 	"TerrariaMods/AstrumAureus.webp",
 	"TerrariaMods/AstrumDeus.webp",
 	"TerrariaMods/BanditCalamity.webp",
@@ -4602,7 +4607,6 @@ var chrImages = [
 	"TerrariaMods/Draedon.png",
 	"TerrariaMods/Dragonfolly.webp",
 	"TerrariaMods/DrunkPrincess.webp",
-	"TerrariaMods/Eridani.png",
 	"TerrariaMods/TheHiveMind.webp",
 	"TerrariaMods/TheLeviathan.png",
 	"TerrariaMods/TheOldDuke.png",
@@ -5843,6 +5847,7 @@ var chrNameDescriptions = [
 	"<b>AGE: Unknown</b><br>Uriel",
 	"<b>AGE: 25</b><br>Vane",
 	"<b>AGE: 30</b><br>Vaseraga",
+	"<b>AGE: Trancends the concept of time</b><br>Versusia",
 	"<b>AGE: 22</b><br>Vira",
 	"<b>AGE: 66</b><br>Yodarha",
 	"<b>AGE: 19</b><br>Yuel",
@@ -6632,6 +6637,9 @@ var chrNameDescriptions = [
 	"<b>AGE: It's a living statue</b><br>Known as \"The Sculpture\". An odd structure of concrete and rebar that will rush at top speed towards the nearest poor sap as long as SCP-173 is not being observed by either snapping their neck or strangling them. Not much else to say.",
 	"<b>AGE: Unknown</b><br>Known as the \"Hard-to-Destroy Reptile\". Despite what it looks like, it is capable of human intellect and even speech, and has advanced regeneration and survivability, allowing it to live no matter how much of its body is destroyed and regenerate completely after some time. Not much is known about its intentions.",
 	"<b>AGE: Unknown</b><br>Known as \"MalO ver1.0.0\". SCP-1471 itself is a downloadable mobile app, with SCP-1471-A being an odd humanoid creature that manifests in your vision the longer the app is installed. It sends images of SCP-1471-A over time; expose yourself to the images long enough, and SCP-1471-A will start to appear in your vision and eventually will irriversably appear for long periods of time, attempting to communicate with you. SCP-1471-A has shown no signs of hostility, though its intentions are unknown.",
+	// Second Stellar
+	"<b>AGE: Unknown</b><br>Asphodene",
+	"<b>AGE: Unknown</b><br>Eridani",
 	// Shantae
 	"<b>AGE: Unknown</b><br>Bolo",
 	"<b>AGE: Unknown</b><br>Mimic",
@@ -7038,7 +7046,6 @@ var chrNameDescriptions = [
 	"<b>AGE: Unknown</b><br>Anahita",
 	"<b>AGE: Unknown</b><br>Aquatic Scourge",
 	"<b>AGE: Unknown</b><br>Archmage",
-	"<b>AGE: Unknown</b><br>Asphodene",
 	"<b>AGE: Unknown</b><br>Astrum Aureus",
 	"<b>AGE: Unknown</b><br>Astrum Deus",
 	"<b>AGE: Unknown</b><br>Bandit",
@@ -7051,7 +7058,6 @@ var chrNameDescriptions = [
 	"<b>AGE: 600</b><br>Draedon",
 	"<b>AGE: Unknown</b><br>Dragonfolly",
 	"<b>AGE: Unknown</b><br>Drunk Princess",
-	"<b>AGE: Unknown</b><br>Eridani",
 	"<b>AGE: Unknown</b><br>The Hive Mind",
 	"<b>AGE: Unknown</b><br>The Leviathan",
 	"<b>AGE: Unknown</b><br>The Old Duke",
@@ -7891,6 +7897,8 @@ function assignSeries(value) {
 		document.getElementById("series" + value).innerHTML = "Scooby-Doo";
 	} else if (chrImages[randNum].includes("SCP/")) {
 		document.getElementById("series" + value).innerHTML = "SCP";
+	} else if (chrImages[randNum].includes("SecondStellar/")) {
+		document.getElementById("series" + value).innerHTML = "Second Stellar";
 	} else if (chrImages[randNum].includes("Shantae/")) {
 		document.getElementById("series" + value).innerHTML = "Shantae";
 	} else if (chrImages[randNum].includes("ShovelKnight/")) {
