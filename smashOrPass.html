@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Smash or Pass | The Monkey Brains</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="randomGenerator.js" defer></script>
+		<style>
+			.seriesButton {
+				margin-right: 4px;
+				font-weight: bold;
+			}
+			#daImage1, #daImage2, #daImage3 {
+				max-width: 550px;
+				max-height: 580px;
+			}
+			#sopButtons {
+				text-align: center;
+				width: fit-content;
+				margin: auto;
+			}
+			#stButton {
+				font-size: 24px;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="index.html" style="position: absolute; left: 10px; top: 26px; z-index: 100; color: white; text-align: center; font-size: 18px">Go to <b>Kiss, Marry, Kill</b></a>
+		<div class="title">
+			<span id="titlebarTop" style="font-family: monospace">The Monkey Brains Podcast:</span><br>
+			<span id="titlebarBottom" style="font-family: monospace">SMASH OR PASS</span>
+		</div>
+		<a href="https://www.youtube.com/@TheMonkeyBrainsPodcast"><img id="mbpImg" src="monkeybrain.png" style="position: absolute; right: 0"></a>
+		<div class="spacerThing"></div>
+		<div id="upperSpace" style="text-align: center">
+			<button id="smmButton" onclick="display('spoilerModeMenu')">Spoiler Mode menu</button>
+			<button id="clearButton" onclick="cuddleMode()">Cuddle mode</button>
+			<div id="bioInfo" style="font-style: italic">Click on a character's image to get their bio!</div>
+			<br>
+			<button id="stButton" style="font-weight: bold; margin: 0px 6px; display: inline-block" onclick="generate(1, false, 0, 'start')">Start</button>
+			<div id="sopButtons" style="display: none">
+				<button id="smButton" style="font-weight: bold; margin: 0px 6px" onclick="generate(1, false, 0, 'smash')">SMASH</button>
+				<button id="paButton" style="font-weight: bold; margin: 0px 6px" onclick="generate(1, false, 0, 'pass')">PASS</button>
+				<button id="rrButton" style="font-weight: bold; margin: 0px 6px" onclick="generate(1, false, 0, 'skip')">Skip</button>
+				<br>
+				<div id="sopValueContainer">
+					<span id="smashNum"></span>
+					<span id="passNum"></span>
+					<span id="skipNum"></span>
+				</div>
+			</div>
+			<div id="spoilerModeMenu" onclick="display('none')"></div>
+			<div id="spoilerModeMenuBox" onclick="">
+				<h1 style="text-align: center; margin-top: 0px; margin-bottom: 10px">Spoiler Mode Settings</h1>
+				<div style="width: fit-content; margin: auto">
+					<!--This sucks mad ass but oh well-->
+					<p class="smmSeries" style="margin-top: 5px; margin-bottom: 5px">
+						<button id="seriesAceAttorney" class="seriesButton" onclick="selectSpoilerMode('Ace Attorney')">TOGGLE</button>
+						<b>Ace Attorney:</b> Currently <span id="spoilerAA"><span style='color: red'>OFF</span></span>
+					</p>
+					<p class="smmSeries" style="margin-top: 5px; margin-bottom: 5px">
+						<button id="seriesDanganronpa" class="seriesButton" onclick="selectSpoilerMode('Danganronpa')">TOGGLE</button>
+						<b>Danganronpa:</b> Currently <span id="spoilerDR"><span style='color: red'>OFF</span></span>
+					</p>
+					<p class="smmSeries" style="margin-top: 5px; margin-bottom: 5px">
+						<button id="seriesEverhood" class="seriesButton" onclick="selectSpoilerMode('Everhood')">TOGGLE</button>
+						<b>Everhood:</b> Currently <span id="spoilerEH"><span style='color: red'>OFF</span></span>
+					</p>
+					<p class="smmSeries" style="margin-top: 5px; margin-bottom: 5px">
+						<button id="seriesHollowKnight" class="seriesButton" onclick="selectSpoilerMode('Hollow Knight')">TOGGLE</button>
+						<b>Hollow Knight:</b> Currently <span id="spoilerHK"><span style='color: red'>OFF</span></span>
+					</p>
+					<p class="smmSeries" style="margin-top: 5px; margin-bottom: 5px">
+						<button id="seriesInscryption" class="seriesButton" onclick="selectSpoilerMode('Inscryption')">TOGGLE</button>
+						<b>Inscryption:</b> Currently <span id="spoilerI"><span style='color: red'>OFF</span></span>
+					</p>
+					<p class="smmSeries" style="margin-top: 5px; margin-bottom: 5px">
+						<button id="seriesOneShot" class="seriesButton" onclick="selectSpoilerMode('OneShot')">TOGGLE</button>
+						<b>OneShot:</b> Currently <span id="spoilerOS"><span style='color: red'>OFF</span></span>
+					</p>
+					<p class="smmSeries" style="margin-top: 5px; margin-bottom: 5px">
+						<button id="seriesOuterWilds" class="seriesButton" onclick="selectSpoilerMode('Outer Wilds')">TOGGLE</button>
+						<b>Outer Wilds:</b> Currently <span id="spoilerOW"><span style='color: red'>OFF</span></span>
+					</p>
+					<p class="smmSeries" style="margin-top: 5px; margin-bottom: 5px">
+						<button id="seriesStevenUniverse" class="seriesButton" onclick="selectSpoilerMode('Steven Universe')">TOGGLE</button>
+						<b>Steven Universe:</b> Currently <span id="spoilerSU"><span style='color: red'>OFF</span></span>
+					</p>
+					<p class="smmSeries" style="margin-top: 5px; margin-bottom: 5px">
+						<button id="seriesUndertale2" class="seriesButton" onclick="selectSpoilerMode('Undertale 2')">TOGGLE</button>
+						<b>Undertale 2:</b> Currently <span id="spoilerU2"><span style='color: red'>OFF</span></span>
+					</p>
+				</div>
+				<div style="text-align: center">
+					<p style="color: white; font-size: 16px"><i>Click anywhere to return...</i></p>
+				</div>
+			</div>
+		</div>
+		<!--Character description boxes-->
+		<div id="chrDescription" onclick="display('none')">
+			<div id="descriptionBox" onclick="">
+				<h1 id="_descHead" style="text-align: center; margin-top: 0px; margin-bottom: 10px; border-bottom: 1px solid white"></h1>
+				<h2 id="_descNotice" style="font-weight: bold; color: red; text-align: center">NOTICE: Descriptions are far from finished. Most characters do not have one.</h2>
+				<p id="_descBody"></p>
+				<div style="text-align: center">
+					<p style="color: white; font-size: 16px"><i>Click anywhere to return...</i></p>
+				</div>
+			</div>
+		</div>
+		<div id="chrSpace">
+			<main>
+				<h1 id="characterName1"></h1>
+				<p id="series1"></p>
+				<a onclick="display('chrDescription', 1)">
+					<img id="daImage1">
+				</a>
+			</main>
+		</div>
+	</body>
+</html>

@@ -7359,7 +7359,13 @@ var randNum = -1;
 var descriptionList = [];
 console.log("Current total characters: " + chrNames.length);
 
-function generate(increment, value, incrementValue) {
+var smashAmount = 0;
+var passAmount = 0;
+var skipAmount = 0;
+
+var cuddleModeToggle = false;
+
+function generate(value, increment, incrementValue, type) {
 	// (10 - 1) + 1 is the max minus the min (plus one) plus the min
 	// Keep in mind the max is the number of characters minus 1
 	if (increment) {
@@ -7367,6 +7373,44 @@ function generate(increment, value, incrementValue) {
 		console.log(randNum);
 	} else {
 		rerollByName();
+	}
+	
+	if (type != undefined) {
+		if (chrNames.length == 0) {
+			document.getElementById("upperSpace").innerHTML = "";
+			document.getElementById("chrSpace").innerHTML = "You really went through every character? You nutjob";
+		} else {
+			switch (type) {
+				case "smash":
+					smashAmount++;
+					break;
+				case "pass":
+					passAmount++;
+					break;
+				case "skip":
+					skipAmount++;
+					break;
+				case "start":
+					document.getElementById("smashNum").innerHTML = "SMASH: 0";
+					document.getElementById("passNum").innerHTML = "PASS: 0";
+					document.getElementById("skipNum").innerHTML = "SKIP: 0";
+					document.getElementById("stButton").style.display = "none";
+					document.getElementById("sopButtons").style.display = "block";
+					break;
+			}
+			if (cuddleModeToggle) {
+				document.getElementById("smashNum").innerHTML = "CUDDLE: " + smashAmount;
+			} else {
+				document.getElementById("smashNum").innerHTML = "SMASH: " + smashAmount;
+			}
+			document.getElementById("passNum").innerHTML = "PASS: " + passAmount;
+			document.getElementById("skipNum").innerHTML = "SKIP: " + skipAmount;
+			
+			chrNames.splice(randNum, 1);
+			chrImages.splice(randNum, 1);
+			chrNameDescriptions.splice(randNum, 1);
+			console.log("Current total characters: " + chrNames.length);
+		}
 	}
 	
 	function rerollByName() {
@@ -7590,79 +7634,7 @@ function generate(increment, value, incrementValue) {
 			Undertale 2:
 				Seriph - REMOVE
 	*/
-}	
-
-/*function oldGenerate() {
-	pickNum++;
-	if (pickNum > 3) {
-		pickNum = 1;
-		document.getElementById("character1").innerHTML = "1."
-		document.getElementById("character2").innerHTML = "2."
-		document.getElementById("character3").innerHTML = "3."
-		document.getElementById("characterImg1").src = ""
-		document.getElementById("characterImg2").src = ""
-		document.getElementById("characterImg3").src = ""
-		document.getElementById("fullDescription1").innerHTML = "-";
-		document.getElementById("fullDescription2").innerHTML = "-";
-		document.getElementById("fullDescription3").innerHTML = "-";
-		document.getElementById("descTitle1").innerHTML = "Character 1";
-		document.getElementById("descTitle2").innerHTML = "Character 2";
-		document.getElementById("descTitle3").innerHTML = "Character 3";
-	}
-	var imageChr = document.getElementById("daImage");
-	imageChr.src = "characters/" + chrImages[randNum];
-	document.getElementById("characterImg" + pickNum).src = imageChr.src;
-	document.getElementById("characterName").innerHTML = chrNames[randNum];
-	document.getElementById("character" + pickNum).innerHTML = pickNum + ". " + chrNames[randNum];
-	document.getElementById("descTitle" + pickNum).innerHTML = chrNames[randNum];
-	document.getElementById("fullDescription" + pickNum).innerHTML = chrNameDescriptions[randNum];
-	
-	// Spoiler Mode for name/image/description changes
-	if (spoilerMode == true) {
-		switch (chrNames[randNum]) {
-			case "Matt Engarde":
-				if (spMdAA) {
-					imageChr.src = "characters/AceAttorney/MattEngardeNormal.webp";
-					document.getElementById("characterImg" + pickNum).src = imageChr.src;
-				}
-				break;
-			case "Mimi Miney":
-				if (spMdAA) {
-					document.getElementById("characterName").innerHTML = "Ini Miney";
-					document.getElementById("character" + pickNum).innerHTML = pickNum + ". Ini Miney";
-				}
-				break;
-			case "Misty Fey":
-				if (spMdAA) {
-					document.getElementById("characterName").innerHTML = "Elise Deauxnim";
-					document.getElementById("character" + pickNum).innerHTML = pickNum + ". Elise Deauxnim";
-				}
-				break;
-			case "Yanni Yogi":
-				if (spMdAA) {
-					document.getElementById("characterName").innerHTML = "Caretaker";
-					document.getElementById("character" + pickNum).innerHTML = pickNum + ". Caretaker";
-				}
-				break;
-			case "Junko Enoshima":
-				if (spMdDR) {
-					imageChr.src = "characters/JunkoEnoshimaDisguise.webp";
-					document.getElementById("characterImg" + pickNum).src = imageChr.src;
-				}
-				break;
-			case "Pink Diamond":
-				if (spMdSU) {
-					document.getElementById("characterName").innerHTML = "Rose Quartz";
-					document.getElementById("character" + pickNum).innerHTML = pickNum + "Rose Quartz";
-					imageChr.src = "characters/StevenUniverse/RoseQuartz.webp";
-					document.getElementById("characterImg" + pickNum).src = imageChr.src;
-				}
-				break;
-		}
-	}
-	
-	assignSeries();
-}*/
+}
 
 function assignSeries(value) {
 	if (chrImages[randNum].includes("AHatInTime/")) {
@@ -8070,20 +8042,22 @@ function selectSpoilerMode(series) {
 	}
 }
 
-function clearPicks() {
-	document.getElementById("characterName1").innerHTML = "Character 1";
-	document.getElementById("characterName2").innerHTML = "Character 2";
-	document.getElementById("characterName3").innerHTML = "Character 3";
-	document.getElementById("series1").innerHTML = "";
-	document.getElementById("series2").innerHTML = "";
-	document.getElementById("series3").innerHTML = "";
-	document.getElementById("daImage1").src = "";
-	document.getElementById("daImage2").src = "";
-	document.getElementById("daImage3").src = "";
-}
-
-function smashOrPass() {
-	
+function clearPicks(smashOrPass) {
+	if (smashOrPass == true ) {
+		document.getElementById("characterName1").innerHTML = "Character";
+		document.getElementById("series1").innerHTML = "";
+		document.getElementById("daImage1").src = "";
+	} else {
+		document.getElementById("characterName1").innerHTML = "Character 1";
+		document.getElementById("characterName2").innerHTML = "Character 2";
+		document.getElementById("characterName3").innerHTML = "Character 3";
+		document.getElementById("series1").innerHTML = "";
+		document.getElementById("series2").innerHTML = "";
+		document.getElementById("series3").innerHTML = "";
+		document.getElementById("daImage1").src = "";
+		document.getElementById("daImage2").src = "";
+		document.getElementById("daImage3").src = "";
+	}
 }
 
 function display(displayWhat, descNum) {
@@ -8103,5 +8077,18 @@ function display(displayWhat, descNum) {
 			document.getElementById("spoilerModeMenu").style.display = "none";
 			document.getElementById("spoilerModeMenuBox").style.display = "none";
 			break;
+	}
+}
+
+function cuddleMode() {
+	cuddleModeToggle = !cuddleModeToggle;
+	if (cuddleModeToggle) {
+		document.getElementById("titlebarBottom").innerHTML = "CUDDLE OR PASS";
+		document.getElementById("smashNum").innerHTML = "CUDDLE: " + smashAmount;
+		document.getElementById("smButton").innerHTML = "CUDDLE";
+	} else {
+		document.getElementById("titlebarBottom").innerHTML = "SMASH OR PASS";
+		document.getElementById("smashNum").innerHTML = "SMASH: " + smashAmount;
+		document.getElementById("smButton").innerHTML = "SMASH";
 	}
 }

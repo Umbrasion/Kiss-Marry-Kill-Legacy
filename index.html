@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>The Monkey Brains | Kiss, Marry, Kill</title>
+		<title>Kiss, Marry, Kill | The Monkey Brains</title>
 		<link rel="stylesheet" href="style.css">
 		<script src="randomGenerator.js"></script>
 		<style>
@@ -16,6 +16,7 @@
 			Things to add/change:
 			- Nothing at the moment. Wahoo!
 		-->
+		<a href="smashOrPass.html" style="position: absolute; left: 10px; top: 26px; z-index: 100; color: white; text-align: center; font-size: 18px">Go to <b>Smash or Pass</b></a>
 		<div class="title">
 			<span id="titlebarTop" style="font-family: monospace">The Monkey Brains Podcast:</span><br>
 			<span id="titlebarBottom" style="font-family: monospace">KISS, MARRY, KILL</span>
@@ -24,7 +25,7 @@
 		<div class="spacerThing"></div>
 		<div style="text-align: center">
 			<button id="smmButton" onclick="display('spoilerModeMenu')">Spoiler Mode menu</button>
-			<button id="rrButton" style="font-weight: bold; margin: 0px 6px" onclick="generate(false, 4)">Reroll all</button>
+			<button id="rrButton" style="font-weight: bold; margin: 0px 6px" onclick="generate(4)">Reroll all</button>
 			<button id="clearButton" style="margin-right: 56px" onclick="clearPicks()">Clear picks</button>
 			<div id="bioInfo" style="font-style: italic">Click on a character's image to get their bio!</div>
 			<div id="spoilerModeMenu" onclick="display('none')"></div>
@@ -87,7 +88,7 @@
 		</div>
 		<div class="grid">
 			<main>
-				<br><button id="generateButton" onclick="generate(false, 1)">Reroll character</button>
+				<br><button id="generateButton" onclick="generate(1)">Reroll character</button>
 				<!--Debug incrementers-->
 				<!--br>
 				<button id="generateButton" onclick="generate(true, 1, 1)">Increment +1</button>
@@ -103,7 +104,7 @@
 				</a>
 			</main>
 			<main>
-				<br><button id="generateButton" onclick="generate(false, 2)">Reroll character</button>
+				<br><button id="generateButton" onclick="generate(2)">Reroll character</button>
 				<!--Debug incrementers-->
 				<!--br>
 				<button id="generateButton" onclick="generate(true, 2, 1)">Increment +1</button>
@@ -119,7 +120,7 @@
 				</a>
 			</main>
 			<main>
-				<br><button id="generateButton" onclick="generate(false, 3)">Reroll character</button>
+				<br><button id="generateButton" onclick="generate(3)">Reroll character</button>
 				<!--Debug incrementers-->
 				<!--br>
 				<button id="generateButton" onclick="generate(true, 3, 1)">Increment +1</button>

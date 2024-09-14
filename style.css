@@ -41,7 +41,7 @@
 		font-size: 24px;
 	}
 	
-	#rrButton {
+	#rrButton, #smButton, #paButton {
 		font-size: 20px;
 	}
 	
@@ -94,7 +94,7 @@
 		font-size: 24px;
 	}
 	
-	#rrButton {
+	#rrButton, #smButton, #paButton {
 		font-size: 20px;
 	}
 	
@@ -147,7 +147,7 @@
 		font-size: 24px;
 	}
 	
-	#rrButton {
+	#rrButton, #smButton, #paButton {
 		font-size: 20px;
 	}
 	
@@ -210,10 +210,9 @@
 		font-size: 20px;
 	}
 	
-	#rrButton {
+	#rrButton, #smButton, #paButton {
 		font-size: 28px;
 	}
-	
 	#bioInfo {
 		font-size: 24px;
 	}
@@ -322,4 +321,26 @@ h3 {
 .spoiler:hover {
 	background-color: rgba(0, 0, 0, 0);
 	text-decoration: underline;
+}
+
+#sopValueContainer {
+	font-size: 20px;
+	margin-top: 6px;
+	font-weight: bold;
+}
+
+#sopValueContainer span {
+	margin: 0px 4px;
+}
+
+#smashNum {
+	color: lightgreen;
+}
+
+#passNum {
+	color: red;
+}
+
+#skipNum {
+	color: lightgray;
 }
