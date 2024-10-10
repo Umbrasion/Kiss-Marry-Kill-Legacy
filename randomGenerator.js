@@ -7378,7 +7378,15 @@ function generate(value, increment, incrementValue, type) {
 	if (type != undefined) {
 		if (chrNames.length == 0) {
 			document.getElementById("upperSpace").innerHTML = "";
-			document.getElementById("chrSpace").innerHTML = "You really went through every character? You nutjob";
+			document.getElementById("chrSpace").style.textAlign = "center";
+			document.getElementById("chrSpace").innerHTML = `
+				<p>You really went through every character? Congratulations, that probably took a while. Nutjob</p>
+				<p>FINAL SCORES:</p>
+				<p id="finalScores"></p>
+			`;
+			setTimeout(function() {
+				document.getElementById("finalScores").innerHTML = "<span style='color: lightgreen'>SMASH: " + smashAmount + "</span> | <span style='color: red'>PASS: " + passAmount + "</span> | <span style='color: lightgray'>SKIP: " + skipAmount + "</span>";
+			}, 1);
 		} else {
 			switch (type) {
 				case "smash":
@@ -7405,11 +7413,6 @@ function generate(value, increment, incrementValue, type) {
 			}
 			document.getElementById("passNum").innerHTML = "PASS: " + passAmount;
 			document.getElementById("skipNum").innerHTML = "SKIP: " + skipAmount;
-			
-			chrNames.splice(randNum, 1);
-			chrImages.splice(randNum, 1);
-			chrNameDescriptions.splice(randNum, 1);
-			console.log("Current total characters: " + chrNames.length);
 		}
 	}
 	
@@ -7428,6 +7431,11 @@ function generate(value, increment, incrementValue, type) {
 				case "The Phantom": case "Zak Gramarye":
 					if (spMdAA) {
 						console.log("Pick rerolled: Ace Attorney");
+						if (type != undefined) {
+							chrNames.splice(randNum, 1);
+							chrImages.splice(randNum, 1);
+							chrNameDescriptions.splice(randNum, 1);
+						}
 						commonReroll();
 						continue reroll;
 					}
@@ -7435,6 +7443,11 @@ function generate(value, increment, incrementValue, type) {
 				case "Izuru Kamukura": case "Mukuro Ikusaba": case "Ultimate Imposter":
 					if (spMdDR) {
 						console.log("Pick rerolled: Danganronpa");
+						if (type != undefined) {
+							chrNames.splice(randNum, 1);
+							chrImages.splice(randNum, 1);
+							chrNameDescriptions.splice(randNum, 1);
+						}
 						commonReroll();
 						continue reroll;
 					}
@@ -7442,6 +7455,11 @@ function generate(value, increment, incrementValue, type) {
 				case "Cat God": case "Pink":
 					if (spMdEH) {
 						console.log("Pick rerolled: Everhood");
+						if (type != undefined) {
+							chrNames.splice(randNum, 1);
+							chrImages.splice(randNum, 1);
+							chrNameDescriptions.splice(randNum, 1);
+						}
 						commonReroll();
 						continue reroll;
 					}
@@ -7449,6 +7467,11 @@ function generate(value, increment, incrementValue, type) {
 				case "The Hollow Knight": case "Radiance":
 					if (spMdHK) {
 						console.log("Pick rerolled: Hollow Knight");
+						if (type != undefined) {
+							chrNames.splice(randNum, 1);
+							chrImages.splice(randNum, 1);
+							chrNameDescriptions.splice(randNum, 1);
+						}
 						commonReroll();
 						continue reroll;
 					}
@@ -7456,6 +7479,11 @@ function generate(value, increment, incrementValue, type) {
 				case "The Archivist": case "The Bone Lord": case "G0lly": case "Grimora": case "The Lonely Wizard": case "Magnificus": case "P03": case "The Photographer":
 					if (spMdI) {
 						console.log("Pick rerolled: Inscryption");
+						if (type != undefined) {
+							chrNames.splice(randNum, 1);
+							chrImages.splice(randNum, 1);
+							chrNameDescriptions.splice(randNum, 1);
+						}
 						commonReroll();
 						continue reroll;
 					}
@@ -7463,6 +7491,11 @@ function generate(value, increment, incrementValue, type) {
 				case "Prototype":
 					if (spMdOS) {
 						console.log("Pick rerolled: OneShot");
+						if (type != undefined) {
+							chrNames.splice(randNum, 1);
+							chrImages.splice(randNum, 1);
+							chrNameDescriptions.splice(randNum, 1);
+						}
 						commonReroll();
 						continue reroll;
 					}
@@ -7470,6 +7503,11 @@ function generate(value, increment, incrementValue, type) {
 				case "The Prisoner": case "Solanum":
 					if (spMdOW) {
 						console.log("Pick rerolled: Outer Wilds");
+						if (type != undefined) {
+							chrNames.splice(randNum, 1);
+							chrImages.splice(randNum, 1);
+							chrNameDescriptions.splice(randNum, 1);
+						}
 						commonReroll();
 						continue reroll;
 					}
@@ -7477,6 +7515,11 @@ function generate(value, increment, incrementValue, type) {
 				case "Seriph":
 					if (spMdU2) {
 						console.log("Pick rerolled: Undertale 2");
+						if (type != undefined) {
+							chrNames.splice(randNum, 1);
+							chrImages.splice(randNum, 1);
+							chrNameDescriptions.splice(randNum, 1);
+						}
 						commonReroll();
 						continue reroll;
 					}
@@ -7552,37 +7595,37 @@ function generate(value, increment, incrementValue, type) {
 		if (spoilerMode == true) {
 			switch (chrNames[randNum]) {
 				case "Matt Engarde":
-					console.log("spoiler mode change check passed with " + chrNames[randNum]);
+					console.log("Spoiler mode change check passed with " + chrNames[randNum]);
 					if (spMdAA) {
 						document.getElementById("daImage" + daValue).src = "characters/AceAttorney/MattEngardeNormal.webp";
 					}
 					break;
 				case "Mimi Miney":
-					console.log("spoiler mode change check passed with " + chrNames[randNum]);
+					console.log("Spoiler mode change check passed with " + chrNames[randNum]);
 					if (spMdAA) {
 						document.getElementById("characterName" + daValue).innerHTML = "Ini Miney";
 					}
 					break;
 				case "Misty Fey":
-					console.log("spoiler mode change check passed with " + chrNames[randNum]);
+					console.log("Spoiler mode change check passed with " + chrNames[randNum]);
 					if (spMdAA) {
 						document.getElementById("characterName" + daValue).innerHTML = "Elise Deauxnim";
 					}
 					break;
 				case "Yanni Yogi":
-					console.log("spoiler mode change check passed with " + chrNames[randNum]);
+					console.log("Spoiler mode change check passed with " + chrNames[randNum]);
 					if (spMdAA) {
 						document.getElementById("characterName" + daValue).innerHTML = "Caretaker";
 					}
 					break;
 				case "Junko Enoshima":
-					console.log("spoiler mode change check passed with " + chrNames[randNum]);
+					console.log("Spoiler mode change check passed with " + chrNames[randNum]);
 					if (spMdDR) {
 						document.getElementById("daImage" + daValue).src = "characters/Danganronpa/JunkoEnoshimaDisguise.webp";
 					}
 					break;
 				case "Pink Diamond":
-					console.log("spoiler mode change check passed with " + chrNames[randNum]);
+					console.log("Spoiler mode change check passed with " + chrNames[randNum]);
 					if (spMdSU) {
 						document.getElementById("characterName" + daValue).innerHTML = "Rose Quartz";
 						document.getElementById("daImage" + daValue).src = "characters/StevenUniverse/RoseQuartz.webp";
@@ -7590,6 +7633,13 @@ function generate(value, increment, incrementValue, type) {
 					break;
 			}
 		}
+	}
+	
+	if (type != undefined) {
+		chrNames.splice(randNum, 1);
+		chrImages.splice(randNum, 1);
+		chrNameDescriptions.splice(randNum, 1);
+		console.log("Current total characters: " + chrNames.length);
 	}
 	
 	/*
@@ -8091,4 +8141,11 @@ function cuddleMode() {
 		document.getElementById("smashNum").innerHTML = "SMASH: " + smashAmount;
 		document.getElementById("smButton").innerHTML = "SMASH";
 	}
+}
+
+function splicer() {
+	chrNames.splice(0, 1130);
+	chrImages.splice(0, 1130);
+	chrNameDescriptions.splice(0, 1130);
+	console.log("Spliced! Current total characters: " + chrNames.length);
 }
